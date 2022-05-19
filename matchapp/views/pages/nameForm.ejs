@@ -1,0 +1,58 @@
+<html>
+    <head>
+      <!-- <link href="../../public/css/style.css" rel="stylesheet" type="text/css"> -->
+    </head>
+    <body>
+      <h1>Maak een rit aan</h1>
+      <form action="/" method="post">
+        <label for="fromLocation">Vertreklocatie</label>
+        <input type="text" id="fromLocation" name="fromLocation" required/>
+
+        <label for="destination">Bestemming</label>
+        <input type="text" id="destination" name="destination" required/>
+
+        <label for="date">Datum</label>
+        <input type="date" id="date" name="date" required/>
+
+      
+        <input type="submit" value="voeg toe" />
+      </form>
+
+      <article>
+        <% for (var index=0; index < data.length; index++) { %>
+        <h2>
+          <%= data[index].destination %>
+        </h2>
+        <p>
+          <%= data[index].fromLocation %>
+          <%= data[index].date %>
+        </p>
+        <% } %>
+      </article>
+      <script>
+        // fetch('https://date.nager.at/api/v3/publicholidays/2017/AT')
+        //   .then((response) => response.json())
+        //   .then((json) => console.log(json));
+
+          // const showDagen = (dagen) => {
+          //  const dagenDiv = document.querySelector('#vakantiedagen');
+
+          //  dagen.forEach(dag => {
+          //    const dagElement = document.createElement('p');
+          //    dagElement.innerText = `Dag naam: ${dag.name}`
+          //    dagenDiv.append(dagElement);
+          //  });
+          // }
+
+        fetch('https://date.nager.at/api/v3/publicholidays/2017/AT')
+          .then(response => response.json())
+          .then((json) => console.log(json));
+
+
+
+
+
+  
+    </script>
+    </body>
+</html>
