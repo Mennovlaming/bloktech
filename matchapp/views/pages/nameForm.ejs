@@ -1,36 +1,32 @@
-<html>
-    <head>
-      <!-- <link href="../../public/css/style.css" rel="stylesheet" type="text/css"> -->
-    </head>
-    <body>
+
+    <%- include('../partials/head'); %>
+    <body id="nameform">
+     
       <h1>Maak een rit aan</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/busRitten">Busritten</a></li>
+        </ul>
+      </nav>
+      
       <form action="/" method="post">
-        <label for="fromLocation">Vertreklocatie</label>
-        <input type="text" id="fromLocation" name="fromLocation" required/>
-
-        <label for="destination">Bestemming</label>
-        <input type="text" id="destination" name="destination" required/>
-
+          
+          <label for="fromLocation">Vertreklocatie</label>
+          <input type="text" id="fromLocation" name="fromLocation" required/>
+       
+          <label for="destination">Bestemming</label>
+          <input type="text" id="destination" name="destination" required/>
+       
         <label for="date">Datum</label>
         <input type="date" id="date" name="date" required/>
 
-      
         <input type="submit" value="voeg toe" />
       </form>
 
-      <article>
-        <% for (var index=0; index < data.length; index++) { %>
-        <h2>
-          <%= data[index].destination %>
-        </h2>
-        <p>
-          <%= data[index].fromLocation %>
-          <%= data[index].date %>
-        </p>
-        <% } %>
-      </article>
-      <script>
-        // fetch('https://date.nager.at/api/v3/publicholidays/2017/AT')
+      
+
+        <!-- // fetch('https://date.nager.at/api/v3/publicholidays/2017/AT')
         //   .then((response) => response.json())
         //   .then((json) => console.log(json));
 
@@ -44,15 +40,32 @@
           //  });
           // }
 
-        fetch('https://date.nager.at/api/v3/publicholidays/2017/AT')
-          .then(response => response.json())
-          .then((json) => console.log(json));
+        // fetch('https://date.nager.at/api/v3/publicholidays/2017/AT')
+        //   .then(response => response.json())
+        //   .then((json) => console.log(json)); -->
+       
+        <!-- <script>
+          let autocomplete;
+          function initAutocomplete() {
+          autocomplete = new google.maps.places.Autocomplete (
+            document.getElementById('autocomplete'), 
+            {
+              types: ['establishment'],
+              componentRestrictions: {'country': ['USA']},
+              fields: ['place_id', 'geometry', 'name']
+            });
+          }
+        </script> -->
+
+        <input id="autocomplete" placeholder="googe autocomplete" type="text"/>
 
 
+        <div class="tmwidget" w-type="event-discovery" w-tmapikey="ApubkcpsSTs2A1bJ08GTB8ObOlKPTAcs" w-googleapikey="AIzaSyCp3RRKrXHuEPi8QM5j6J3mrSvP3d125qA" w-keyword="" w-theme="simple" w-colorscheme="light" w-width="350" w-height="600" w-size="25" w-border="0" w-borderradius="4" w-radius="25" w-period="month" w-layout="vertical" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_6z23tyb" w-source="" w-branding="Ticketmaster" w-countrycode="NL" w-postalcode="" w-city="" w-latlong=""></div>
+        <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
+       
+        <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp3RRKrXHuEPi8QM5j6J3mrSvP3d125qA&libraries=places&callback=initMap">
+</script>
 
+      </body>
 
-
-  
-    </script>
-    </body>
-</html>

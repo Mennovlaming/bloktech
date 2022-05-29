@@ -1,0 +1,21 @@
+<!-- in busritten komen alle busritten die aangemaakt zijn met de nameform,
+hier komt ook een link naar de nameform -->
+
+<%- include('../partials/head'); %>
+
+<h1>Alle huidige busritten</h1>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/nameForm">Maak busrit aan</a></li>
+  </ul>
+</nav>
+
+  <article>
+    <% for (var index=0; index < data.length; index++) { %>
+      <h2><%= data[index].destination %></h2>
+      <p><%= data[index].fromLocation %></p>
+      <p><%= data[index].date %></p>
+    <% } %>
+  </article>
+
