@@ -12,6 +12,8 @@ hier komt ook een link naar de nameform -->
 </nav>
 
   <article>
+    <!-- loopt door de data (for) heen, voegt voor elk gevonden data een nieuwe
+     article toe -->
     <% for (var index=0; index < data.length; index++) { %>
       <h2><%= data[index].destination %></h2>
       <p><%= data[index].fromLocation %></p>
