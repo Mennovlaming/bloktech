@@ -1,0 +1,13 @@
+{
+    "extends": [
+        "wesbos"
+    ], 
+    "rules": {
+        // 0 is niks, 1 is warning, 2 is errors
+        "no-unused-vars": 1,
+    },
+    "ignorePatterns": [
+        "*.ejs",
+        "*.js"
+    ],
+}
