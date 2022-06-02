@@ -8,7 +8,7 @@ const dotenv = require('dotenv').config();
 const { MongoClient } = require('mongodb');
 const { ObjectId } = require('mongodb');
 
-let db = null
+let db = null;
 
 //Hier maak ik de functie connectDB aan, hiermee word verbinding gemaakt met de database, de URI staat in de .env file.
 async function connectDB() {
@@ -17,6 +17,7 @@ async function connectDB() {
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
   });
+  
   try {
     await client.connect();
     db = client.db(process.env.DB_NAME);
