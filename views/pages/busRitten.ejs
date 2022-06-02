@@ -1,8 +1,9 @@
 <!-- in busritten komen alle busritten die aangemaakt zijn met de nameform,
 hier komt ook een link naar de nameform -->
-
+<!DOCTYPE html>
+<html>
 <%- include('../partials/head'); %>
-
+<body>
 <h1>Alle huidige busritten</h1>
 <nav>
   <ul>
@@ -15,9 +16,14 @@ hier komt ook een link naar de nameform -->
     <!-- loopt door de data (for) heen, voegt voor elk gevonden data een nieuwe
      article toe -->
     <% for (var index=0; index < data.length; index++) { %>
-      <h2><%= data[index].destination %></h2>
-      <p><%= data[index].fromLocation %></p>
+      <div class="busrit">
+      <h2><%= data[index].fromLocation %></h2>
+      <p><%= data[index].destination %></p>
       <p><%= data[index].date %></p>
+    </div>
     <% } %>
   </article>
+
+</body>
+</html>
 
