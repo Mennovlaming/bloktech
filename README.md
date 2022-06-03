@@ -1,4 +1,4 @@
-# blok-tech
+<!-- # blok-tech
 
 
 # week 1
@@ -30,5 +30,32 @@ Ik heb onderzoek gedaan naar verschillende API's die ik mogelijk kan gaan gebrui
 # week 5
 Laatste week voor A1/eerste oplevering
 
-Deze week was het voornamelijk puntjes op de i zetten, het verslag afronden, styling afmaken en zorgen dat er geen onverwachte errors meer komen.
+Deze week was het voornamelijk puntjes op de i zetten, het verslag afronden, styling afmaken en zorgen dat er geen onverwachte errors meer komen. -->
+
+# Readme file
+Welkom bij de readme van dit project, hier zal wat uitleg geven over hoe je dit project kan runnen, en waar ik gebruik van heb gemaakt, na deze readme zou je zelf zonder problemen dit project kunnen runnen. 
+
+clone de volgende repository van git om aan de slag te gaan met de applicatie
+
+https://github.com/Mennovlaming/blok-tech
+
+# Setup project
+Om het project te kunnen runnen, moet je NPM geinstalleerd hebben.
+Om NPM te installeren, type in de terminal:
+
+'NPM install'
+
+Het project maakt gebruik van een database, MongoDB, een connectie hiermee is vereist voor de volledige functionaliteit.
+
+Er zitten in de package.json een aantal voorgeprogrammerde commando's om de app te runnen, eentje hiervan is 'start'. Om te app te runnen type in de terminal:
+
+'NPM start'
+
+# API keys
+De app maakt gebruik van 2 3rd party API's, om deze te gebruiken zal je een gepersonaliseerde API key moeten hebben. Om meer informatie te vinden hierover en om een API key aan te vragen kijk op:
+- [Ticketmaster discovery API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
+- [Google places API ](https://developers.google.com/maps/documentation/places/web-service/overview)
+
+# .env bestand
+Ik maak gebruik van een .env bestand, om de gevoelige en persoonlijke links en wachtwoorden voor mijzelf te houden. Bijgevoegd zit een .env_sample bestand, maak zelf een .env bestand aan en voeg in dit bestand je eigen keys, namen en wachtwoorden toe om hier gebruik van te maken. 
 
