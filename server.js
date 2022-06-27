@@ -1,10 +1,7 @@
 const express = require('express');
-
 const app = express();
 const port = 3000;
-
 const dotenv = require('dotenv').config();
-
 const { MongoClient } = require('mongodb');
 const { ObjectId } = require('mongodb');
 
@@ -28,12 +25,9 @@ async function connectDB() {
 
 // static files
 app.use(express.static('public'));
-
 app.use(express.json());
 app.use(express.urlencoded({extended: true }))
-
 app.set('view engine', 'ejs');
-
 app.get('/', async (req, res) => {
   //data1 is een verbinding met de database opvragen
   const data1 = await db.collection('matchapp').find({}, {}).toArray();
@@ -58,6 +52,7 @@ app.get('/busritten', async (req, res) => {
       destination: req.body.destination,
       date: req.body.date
     };
+    
     //add
     //met insertone voeg je een busrit toe, hierboven gedeclareerd
     await db.collection('matchapp').insertOne(busrit);

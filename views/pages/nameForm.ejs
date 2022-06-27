@@ -12,12 +12,12 @@
     </ul>
   </nav>
 
-  <form action="/" method="post">
+  <!-- <form action="/" method="post">
 
     <label for="fromLocation">Vertreklocatie</label>
     <input type="text" id="fromLocation" placeholder="Voer vertreklocatie in" name="fromLocation" required />
     <button onclick="getLocation()">Huidige locatie</button>
-    <!-- ik wou hier de huidge locatie als dichtsbijzijnde stad meegeven, helaas niet gelukt. -->
+     ik wou hier de huidge locatie als dichtsbijzijnde stad meegeven, helaas niet gelukt. 
     <p id="locatie"></p> 
     <label for="destination">Bestemming</label>
     <input type="text" id="destination" placeholder="Voer eindbestemming in" name="destination" required />
@@ -26,26 +26,30 @@
     <input type="date" id="date" name="date" required />
 
     <input type="submit" value="voeg toe" />
-  </form>
+  </form> -->
 
-  
+  <button onclick="getLocation()">Huidige locatie</button>
+    <!-- ik wou hier de huidge locatie als dichtsbijzijnde stad meegeven, helaas niet gelukt. -->
+    
+  <p id="locatie"></p>
 
-  
- 
+  <ul id="list">
+    
+  </ul>
 
   <script src="/js/nameForm.js"></script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp3RRKrXHuEPi8QM5j6J3mrSvP3d125qA&libraries=places&callback=initAutocomplete">
   </script>
 
-
+<!-- 
     <div w-type="event-discovery" w-tmapikey="ApubkcpsSTs2A1bJ08GTB8ObOlKPTAcs" w-googleapikey="YOUR_GOOGLE_API_KEY"
     w-keyword="" w-theme="simple" w-colorscheme="light" w-width="350" w-height="600" w-size="25" w-border="0"
     w-borderradius="4" w-radius="25" w-period="month" w-layout="vertical" w-attractionid="" w-promoterid="" w-venueid=""
     w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_x6784p"
     w-source="" w-branding="Ticketmaster" w-latlong="52.3675734, 4.9041389"></div> 
  
-    <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
+    <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script> -->
 
 </body>
 

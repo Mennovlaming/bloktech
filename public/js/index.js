@@ -2,13 +2,13 @@ const URL = "https://date.nager.at/api/v3/publicholidays/2022/NL";
     const list = document.getElementById('list');
 
 // array is #, anders . !!!
-        function freeDays() {
+         function freeDays() {
             getData(URL).then ( data => {
-              console.log(data);
+              
               var eventData = data;
               
               eventData.forEach(allEvents => {
-                console.log(allEvents);
+               
                 
                 allEventsHTML = 
                   `<li>
@@ -34,4 +34,21 @@ const URL = "https://date.nager.at/api/v3/publicholidays/2022/NL";
 
 freeDays();
 
-console.log('test123');
+
+//navragen
+//werkt niet omdat hij de .show niet toevoegd bij een element dat gegenereerd word.
+//Hij checkt of er iets in de HTML staat, de JS komt later pas en daarom voegt hij de class .show niet toe
+const cards = document.querySelectorAll(".card")
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle("show", entry.isIntersecting)
+  })
+}, 
+{
+  threshold: 1, 
+})
+
+cards.forEach(card => {
+  observer.observe(card);
+})

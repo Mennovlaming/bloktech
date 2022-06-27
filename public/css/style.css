@@ -107,3 +107,16 @@ h2:not(ul:nth-of-type(2) li h2) {
 
 
 
+.card {
+    background:white;
+    border: 1p solid black;
+    border-radius: .25rem;
+    padding: 50px;
+    transform: translateX(100px);
+    opacity: 0;
+    transition:150ms;
+}
+.card.show {
+    transform: translateX(0);
+    opacity: 1;
+}

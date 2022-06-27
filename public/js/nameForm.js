@@ -8,7 +8,6 @@ let autocomplete;
     
         inputs.forEach(input => {
           
-
           new google.maps.places.Autocomplete(input, {
             types: ['establishment'], 
             componentRestrictions: {'country' : ['NL']},
@@ -17,35 +16,51 @@ let autocomplete;
         })
       }
 
-
       var test = document.getElementById("locatie");
 
       function getLocation() {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(showPosition);
+          
         } else { 
           x.innerHTML = "Geolocation is not supported by this browser.";
         }
         
       }
 
+      
       function showPosition(position) {
-
+        let currentLatLon = `${position.coords.latitude}, ${position.coords.longitude}`;
         test.innerHTML = 
         //  "Latitude: " + position.coords.latitude + 
         //  "<br>Longitude: " + position.coords.longitude;
    `Latitude: ${position.coords.latitude}<br> Longitude: ${position.coords.longitude}`;
-
-
-   //Hier wou ik de geolocatie gebruiken om de latitude en longitude in te vullen in de widget, 
-   //en deze vanaf hier in de HTML laden, helaas werkt dit niet.
-
-    //       `<div w-type="event-discovery" w-tmapikey="ApubkcpsSTs2A1bJ08GTB8ObOlKPTAcs" w-googleapikey="YOUR_GOOGLE_API_KEY"
-    //   w-keyword="" w-theme="simple" w-colorscheme="light" w-width="350" w-height="600" w-size="25" w-border="0"
-    //   w-borderradius="4" w-radius="25" w-period="month" w-layout="vertical" w-attractionid="" w-promoterid="" w-venueid=""
-    //   w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_x6784p"
-    //   w-source="" w-branding="Ticketmaster" w-latlong="${position.coords.latitude},${position.coords.longitude}"></div>`;
+    
         
+        console.log(currentLatLon);
       }
 
-      
+// function getData() {
+//   fetch('http://api.positionstack.com/v1/reverse?access_key=489c94689aedfbbce029bb9ec16310c1&query=52.9619051,4.7517951&country=NLD&output=json')
+
+//   .then(console.log(number))
+// }
+
+// getData();
+
+
+  
+  function getData(){
+    
+    // fetch(url) dus de url van je api
+    fetch(`http://api.positionstack.com/v1/reverse?access_key=489c94689aedfbbce029bb9ec16310c1&query=52.9618562,4.7517031&country=NLD&output=json`)
+    // fetch(`http://api.positionstack.com/v1/reverse?access_key=489c94689aedfbbce029bb9ec16310c1&query=${position.coords.latitude},${position.coords.longitude}&country=NLD&output=json`)
+     
+    // dit is een get request, en dan krijg je een response terug in .then in js gebruik je json dus wil je de response naar json vormen met de method .json() dus response.json()
+      .then(response => response.json())
+    // Hierna is data beschikbaar binnen de volgende .then() en dan kun je daarna die data bijvoorbeeld console.log, of opschonen of wat je ook wilt doen met de data.
+      .then(data => console.log(data.data[1].street))
+  }
+  getData()
+
+// http://api.positionstack.com/v1/reverse?access_key=489c94689aedfbbce029bb9ec16310c1&query=52.9619051,4.7517951&country=NLD&output=json
