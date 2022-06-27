@@ -32,15 +32,6 @@ let autocomplete;
         console.log(currentLatLon);
       }
 
-// function getData() {
-//   fetch('http://api.positionstack.com/v1/reverse?access_key=489c94689aedfbbce029bb9ec16310c1&query=52.9619051,4.7517951&country=NLD&output=json')
-
-//   .then(console.log(number))
-// }
-
-// getData();
-
-
   
   function getData(){
     
@@ -57,5 +48,3 @@ let autocomplete;
       .then(data => console.log(data.data[1].street))
   }
   getData()
-
-// http://api.positionstack.com/v1/reverse?access_key=489c94689aedfbbce029bb9ec16310c1&query=52.9619051,4.7517951&country=NLD&output=json
