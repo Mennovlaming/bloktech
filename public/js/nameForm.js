@@ -45,6 +45,6 @@ let autocomplete;
     // dit is een get request, en dan krijg je een response terug in .then in js gebruik je json dus wil je de response naar json vormen met de method .json() dus response.json()
       .then(response => response.json())
     // Hierna is data beschikbaar binnen de volgende .then() en dan kun je daarna die data bijvoorbeeld console.log, of opschonen of wat je ook wilt doen met de data.
-      .then(data => console.log(data.data[1].street))
+      .then(data => console.log(data.data[0].label))
   }
   getData()
