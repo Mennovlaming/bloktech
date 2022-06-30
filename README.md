@@ -37,7 +37,7 @@ Welkom bij de readme van dit project, hier zal wat uitleg geven over hoe je dit 
 
 clone de volgende repository van git om aan de slag te gaan met de applicatie
 
-https://github.com/Mennovlaming/blok-tech
+https://github.com/Mennovlaming/bloktech
 
 # Setup project
 Om het project te kunnen runnen, moet je NPM geinstalleerd hebben.
@@ -55,6 +55,8 @@ Er zitten in de package.json een aantal voorgeprogrammerde commando's om de app 
 De app maakt gebruik van 2 3rd party API's, om deze te gebruiken zal je een gepersonaliseerde API key moeten hebben. Om meer informatie te vinden hierover en om een API key aan te vragen kijk op:
 - [Ticketmaster discovery API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
 - [Google places API ](https://developers.google.com/maps/documentation/places/web-service/overview)
+- [Positionstack API ](https://positionstack.com)
+
 
 # .env bestand
 Ik maak gebruik van een .env bestand, om de gevoelige en persoonlijke links en wachtwoorden voor mijzelf te houden. Bijgevoegd zit een .env_sample bestand, maak zelf een .env bestand aan en voeg in dit bestand je eigen keys, namen en wachtwoorden toe om hier gebruik van te maken. 
