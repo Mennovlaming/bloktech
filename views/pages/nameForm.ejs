@@ -12,14 +12,21 @@
     </nav>
 
     <form action="/" method="post">
+     
       <label for="fromLocation">Vertreklocatie</label>
+      <a href="javascript:void(0)" onclick="getLocation()">
+        <img src="/images/place.png" alt="">
+      </a>
       <input
+      
         type="text"
         id="fromLocation"
         placeholder="Voer vertreklocatie in"
         name="fromLocation"
+        
       />
-      <button onclick="getLocation()">Huidige locatie</button>
+        
+      
       <p id="locatie"></p>
       <label for="destination">Bestemming</label>
       <input
@@ -27,11 +34,23 @@
         id="destination"
         placeholder="Voer eindbestemming in"
         name="destination"
-        
+        list="festivals"
       />
+      
+      <datalist id="festivals">
+        <option>Awakenings</option>
+        <option>Verknipt</option>
+        <option>Elrow</option>
+        <option>Strafwerk</option>
+        <option>Woo Hah</option>
+        <option>By the Creek</option>
+        <option>Lowlands</option>
+        <option>Pinkpop</option>
+        <option>Freefestival</option>
+      </datalist>
 
       <label for="date">Datum</label>
-      <input type="date" id="date" name="date" required />
+      <input type="date" id="date" name="date" class="date"/>
 
       <input type="submit" value="voeg toe" />
     </form>

@@ -16,7 +16,7 @@ async function connectDB() {
   try {
     await client.connect();
     db = client.db(process.env.DB_NAME);
-    console.log(db);
+     console.log('db verbinding is gelukt');
     //als het niet lukt, 'catch' een error
   } catch (error) {
     throw new Error(error);
@@ -24,7 +24,7 @@ async function connectDB() {
 }
 
 
-connectDB().then(console.log("Verbinding database goed"));
+connectDB()
 
 // static files
 app.use(express.static("public"));
@@ -32,22 +32,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.get("/", async (req, res) => {
+  // console.log(db);
   //data1 is een verbinding met de database opvragen
   // const data1 = await db.collection("matchapp").find({}, {}).toArray();
-  const data1 = await db.collection("tours").find({},{}) .toArray();
-  console.log(data1)
+  const data1 = await db.collection("test")
+  
+  //const data1 = await db.collection("matchapp").find({},{}).toArray();
+  // console.log(data1);
   //geef data1 mee aan de pages
   res.render("pages/index", { data: data1 });
   
 });
 
 app.get("/nameForm", async (req, res) => {
-  const data1 = await db.collection("tours").find({},{}) .toArray();
+  const data1 = await db.collection("matchapp").find({},{}).toArray();
   res.render("pages/nameForm", { data: data1 });
 });
 
 app.get("/busritten", async (req, res) => {
-  const data1 = await db.collection("tours").find({},{}) .toArray();
+  const data1 = await db.collection("matchapp").find({},{}).toArray();
   res.render("pages/busRitten", { data: data1 });
 });
 
@@ -61,12 +64,12 @@ app.post("/", async (req, res) => {
 
   //add
   //met insertone voeg je een busrit toe, hierboven gedeclareerd
-  await db.collection("tours").insertOne(busrit);
+  await db.collection("matchapp").insertOne(busrit);
   //get latest, data updaten
-  const tours = await db.collection("tours").find({}, {}).toArray();
+  const matchapp = await db.collection("matchapp").find({},{}).toArray();
   //render page met de geupdate data
   const title = "succesfully added";
-  res.render("pages/nameForm", { title, tours });
+  res.render("pages/nameForm", { title, matchapp });
 });
 
 app.listen(port, console.log(`App draait op ${port}`));

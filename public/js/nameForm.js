@@ -14,7 +14,8 @@ function initAutocomplete() {
 
 var test = document.getElementById("locatie");
 
-//Dit is de functie van de button, met geolocatie pakt ie lat en lon
+//test1234
+//Dit is de functie van de button, met geolocatie pakt ie lat en lon test123
 async function getLocation() {
   if (navigator?.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -26,7 +27,7 @@ async function getLocation() {
 //Hier zet ie de huidige lat en lon en de console, dit moet dus uiteindelijk als stad of land in de HTML komen
 function showPosition(position) {
   let currentLatLon = `${position?.coords.latitude}, ${position?.coords.longitude}`;
-  test.innerHTML = `Latitude: ${position.coords.latitude}<br> Longitude: ${position.coords.longitude}`;
+  
 
   fetch(
     `http://api.positionstack.com/v1/reverse?access_key=489c94689aedfbbce029bb9ec16310c1&query=${position.coords.latitude},${position.coords.longitude}&country=NLD&output=json`
@@ -36,7 +37,7 @@ function showPosition(position) {
     // Hierna is data beschikbaar binnen de volgende .then() en dan kun je daarna die data bijvoorbeeld console.log, of opschonen of wat je ook wilt doen met de data.
     .then(
       (data) =>
-        (document.getElementById("fromlocation").innerText = data.data[0].locality)
+      (document.getElementById("fromLocation").value = data.data[0].locality)
     );
 
   console.log(currentLatLon);
